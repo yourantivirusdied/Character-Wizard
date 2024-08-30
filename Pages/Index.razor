@@ -1,8 +1,8 @@
 ﻿@page "/"
 
 
-<h1>Welcome to Character Wizard.</h1>
-
+<h1>Welcome to Character Wizard. <img src="https://media.discordapp.net/attachments/1184656933286858806/1279184110161629294/wizardbunny.png?ex=66d38489&is=66d23309&hm=330b8ce4dca88617f3253f7b486e512725bffacdd890de58d7e9515e96730cae&=&format=webp&quality=lossless&width=473&height=473" /> </h1>
+<div class="game">
 <p>@currentQuestion</p>
 
 @foreach (var answer in currentAnswers)
@@ -11,6 +11,7 @@
 }
 
 <p role="status">Current score: @currentScore</p>
+</div>
 
 @code {
     private int currentScore = 0;

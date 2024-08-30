@@ -63,9 +63,32 @@ a, .btn-link {
         content: "An error has occurred."
     }
 
-    p {
+p {
+    width: 50%;
+    background-image: linear-gradient(to right, #CDCF52, #747616);
+    margin-left: 250px;
+    text-align: center;
+    font-size: 30px;
+}
 
-        width: 50%;
-        background-color: blueviolet;
+h1 {
+    border-style: groove;
+    background-color: #5e6bbf;
+    color: #ebedff;
+    font-family: "Lucida Console";
+    box-shadow: 2px 2px 5px white;
 
-    }
+}
+
+body {
+    background-color: #060b2e;
+    text-align: center;
+
+
+}
+
+.game {
+    padding: 200px;
+    border-style: groove;
+    box-shadow: 2px 2px 5px white;
+}
