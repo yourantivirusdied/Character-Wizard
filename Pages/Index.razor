@@ -1,54 +1,78 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
 
-<h1>Welcome to Character Wizard. </h1>
+<h1>Welcome to Character Wizard.</h1>
 
-Welcome to your new app.
+<p>@currentQuestion</p>
 
+@foreach (var answer in currentAnswers)
+{
+    <button @onclick="() => CheckAnswer(answer)">@answer</button>
+}
 
-
-<p role="status">Current count: @currentCount</p>
-
-
-
+<p role="status">Current score: @currentScore</p>
 
 @code {
-    private string currentCount = "0";
+    private int currentScore = 0;
+    private int currentQuestionIndex = 0;
 
-
-
-
-    private int questionInt = 1;
-    
-    private List<string> questions = new List<string>
+    private List<string> questionsList = new List<string>
     {
-        "questionone",
-        "questiontwo"
+        "question1",
+        "question2",
+        "question3",
+        "question4",
+        "question5"
     };
 
-    private void CheckQuestionInt()
+    private List<List<string>> answers = new List<List<string>>
     {
-        switch (questionInt)
-        {
-            case 1:
-                currentCount = "testText";
-                Thread.Sleep(2000);
+        new List<string> { "A", "B", "C" },
+        new List<string> { "D", "E", "F" },
+        new List<string> { "G", "H", "I" },
+        new List <string> {"K", "L", "M"},
+        new List <string> {"N", "O", "P"}
+    };
 
-                break;
+    private List<string> correctAnswers = new List<string>
+    {
+        "B",
+        "E",
+        "H",
+        "M",
+        "O"
+    };
 
-
-        }
-
-
-   
-    
-    }
+    private string currentQuestion;
+    private List<string> currentAnswers;
 
     protected override void OnInitialized()
     {
-        CheckQuestionInt();
-        
+        LoadQuestion();
+    }
+
+    private void LoadQuestion()
+    {
+        if (currentQuestionIndex < questionsList.Count)
+        {
+            currentQuestion = questionsList[currentQuestionIndex];
+            currentAnswers = answers[currentQuestionIndex];
+        }
+        else
+        {
+            currentQuestion = "Quiz completed!";
+            currentAnswers = new List<string>();
+        }
+    }
+
+    private void CheckAnswer(string answer)
+    {
+        if (answer == correctAnswers[currentQuestionIndex])
+        {
+            currentScore++;
+        }
+
+        currentQuestionIndex++;
+        LoadQuestion();
     }
 }
-
