@@ -1,7 +1,11 @@
 ﻿@page "/"
 
+<div class="intro">
+    <h1>Welcome to Character Wizard. <img src="https://files.catbox.moe/ayve68.png" /> </h1>
+<p>2024 - 20XX by N. D. for the Congressional App Challenge</p>
 
-<h1>Welcome to Character Wizard. <img src="https://media.discordapp.net/attachments/1184656933286858806/1279184110161629294/wizardbunny.png?ex=66d38489&is=66d23309&hm=330b8ce4dca88617f3253f7b486e512725bffacdd890de58d7e9515e96730cae&=&format=webp&quality=lossless&width=473&height=473" /> </h1>
+</div>
+
 <div class="game">
 <p>@currentQuestion</p>
 
@@ -9,39 +13,40 @@
 {
     <button @onclick="() => CheckAnswer(answer)">@answer</button>
 }
+<p>  @Results </p>
 
-<p role="status">Current score: @currentScore</p>
 </div>
 
 @code {
     private int currentScore = 0;
     private int currentQuestionIndex = 0;
+    private string Results = "";
 
     private List<string> questionsList = new List<string>
     {
-        "question1",
-        "question2",
-        "question3",
-        "question4",
-        "question5"
+        "Would you say that your character's color palette has a balance of colors?",
+        "Is your character's backstory mostly sad, overly happy, or a realistic blend?",
+        "Do your story's circumstances center around your character?",
+        "Do you understand your character's sense of morality and justice?",
+        "When your character makes a decision, is there always a good reason behind it?"
     };
 
     private List<List<string>> answers = new List<List<string>>
     {
-        new List<string> { "A", "B", "C" },
-        new List<string> { "D", "E", "F" },
-        new List<string> { "G", "H", "I" },
-        new List <string> {"K", "L", "M"},
-        new List <string> {"N", "O", "P"}
+        new List <string> { "Yes", "No", "Not Applicable" },
+        new List <string> { "Depressingly sad", "Nothing bad happens!", "A realistic blend of events" },
+        new List <string> { "Yes, my character is The Chosen Special One", "The world would still exist without them", "Not applicable" },
+        new List <string> {"Yes, I understand their stance on fairness and morality", "I do not understand, I just assume they'd do whatever", "Not applicable"},
+        new List <string> {"No, my character does whatever they want with no regard for logic", "Yes, I try to make my character's actions believable for their personality and backstory", "not applicable"}
     };
 
     private List<string> correctAnswers = new List<string>
     {
-        "B",
-        "E",
-        "H",
-        "M",
-        "O"
+        "Yes",
+        "A realistic blend of events",
+        "The world would still exist without them",
+        "Yes, I understand their stance on fairness and morality",
+        "Yes, I try to make my character's actions believable for their personality and backstory"
     };
 
     private string currentQuestion;
@@ -61,7 +66,13 @@
         }
         else
         {
-            currentQuestion = "Quiz completed!";
+            if (currentScore >= 3) {
+                Results = "test complete ID 1";
+
+    } else
+            {
+                Results = "Test complete ID 2";
+            }
             currentAnswers = new List<string>();
         }
     }

@@ -63,7 +63,7 @@ a, .btn-link {
         content: "An error has occurred."
     }
 
-p {
+.game p {
     width: 50%;
     background-image: linear-gradient(to right, #CDCF52, #747616);
     margin-left: 250px;
@@ -71,7 +71,7 @@ p {
     font-size: 30px;
 }
 
-h1 {
+.intro {
     border-style: groove;
     background-color: #5e6bbf;
     color: #ebedff;
@@ -80,12 +80,19 @@ h1 {
 
 }
 
+.intro img {
+    height: 10%;
+    width: 10%;
+    float: right;
+}
 body {
     background-color: #060b2e;
     text-align: center;
 
 
 }
+
+
 
 .game {
     padding: 200px;
