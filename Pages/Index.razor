@@ -23,7 +23,8 @@
     private string Results = "";
 
     private List<string> questionsList = new List<string>
-    {
+    {   
+        "Welcome to Character Wizard. This test was designed to create a way to test and reflect on any fictional characters you may have been developing. Are you ready to begin?",
         "Would you say that your character's color palette has a balance of colors?",
         "Is your character's backstory mostly sad, overly happy, or a realistic blend?",
         "Do your story's circumstances center around your character?",
@@ -33,6 +34,7 @@
 
     private List<List<string>> answers = new List<List<string>>
     {
+        new List <string> { "Yeah!", "Might as well be", "Sure thing."},
         new List <string> { "Yes", "No", "Not Applicable" },
         new List <string> { "Depressingly sad", "Nothing bad happens!", "A realistic blend of events" },
         new List <string> { "Yes, my character is The Chosen Special One", "The world would still exist without them", "Not applicable" },
@@ -41,7 +43,8 @@
     };
 
     private List<string> correctAnswers = new List<string>
-    {
+    {   
+        "None of these answers matter.",
         "Yes",
         "A realistic blend of events",
         "The world would still exist without them",
