@@ -68,7 +68,7 @@ a, .btn-link {
     color: #ffffff;
     border-radius: 20px, 20px, 15px;
     /* background-image: linear-gradient(to right, #CDCF52, #747616); */
-
+    font-family: "Trebuchet MS";
     text-align: center;
     font-size: 28px;
 }
@@ -88,10 +88,11 @@ a, .btn-link {
     float: right;
 }
 body {
+    font-family: "Trebuchet MS";
     background-image: url('https://cdn.pixabay.com/photo/2020/03/30/13/29/space-4984262_960_720.jpg');
     background-color: #060b2e;
     text-align: center;
-    
+    background-size: cover;
 }
 
 
@@ -117,4 +118,5 @@ button {
     border-color: blueviolet;
     margin: 20px;
     border-radius: 10px;
+    box-shadow: 2px 2px 10px blueviolet;
 }

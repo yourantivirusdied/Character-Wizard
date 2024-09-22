@@ -33,6 +33,9 @@
         "In your story, does your character have a good balance of friends and foes?",
         "How many of your character's flaws can you name?",
         "Can you visualize your character in your head?",
+        "How long have you been developing your character?",
+        "Do other characters in your story exist solely to help your character?",
+        "Does your character exist solely to help or be a companion to another character?",
         
         
 
@@ -49,6 +52,9 @@
         new List <string> {"Yes", "Everyone hates them!", "Everyone loves them!"}, 
         new List <string> {"0, They're perfect!", "About 2 to 7", "Way too many..."},
         new List <string> {"Yes", "No"},
+        new List <string> {"For a long time now", "Not very long"},
+        new List <string> {"No", "Yes"},
+        new List <string> {"Yes", "No"},
     };
 
     private List<string> correctAnswers = new List<string>
@@ -62,6 +68,9 @@
         "Yes",
         "About 2 to 7",
         "Yes",
+        "For a long time now",
+        "No",
+        "No",
 
     };
 
@@ -82,7 +91,7 @@
         }
         else
         {
-            if (currentScore >= 3) {
+            if (currentScore >= 5) {
                 Results = "Your character seems well rounded and complex. Great work.";
                 currentQuestion = "";
             } else
