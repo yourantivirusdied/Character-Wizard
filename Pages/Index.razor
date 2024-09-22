@@ -3,7 +3,7 @@
 <div class="intro">
     <h1>Welcome to Character Wizard. <img src="https://files.catbox.moe/ayve68.png" /> </h1>
 <p>2024 - 20XX by N. D. for the Congressional App Challenge</p>
-
+<p> background image from Pixabay.</p>
 </div>
 
 <div class="game">
@@ -29,7 +29,13 @@
         "Is your character's backstory mostly sad, overly happy, or a realistic blend?",
         "Do your story's circumstances center around your character?",
         "Do you understand your character's sense of morality and justice?",
-        "When your character makes a decision, is there always a good reason behind it?"
+        "When your character makes a decision, is there always a good reason behind it?",
+        "In your story, does your character have a good balance of friends and foes?",
+        "How many of your character's flaws can you name?",
+        "Can you visualize your character in your head?",
+        
+        
+
     };
 
     private List<List<string>> answers = new List<List<string>>
@@ -39,7 +45,10 @@
         new List <string> { "Depressingly sad", "Nothing bad happens!", "A realistic blend of events" },
         new List <string> { "Yes, my character is The Chosen Special One", "The world would still exist without them", "Not applicable" },
         new List <string> {"Yes, I understand their stance on fairness and morality", "I do not understand, I just assume they'd do whatever", "Not applicable"},
-        new List <string> {"No, my character does whatever they want with no regard for logic", "Yes, I try to make my character's actions believable for their personality and backstory", "not applicable"}
+        new List <string> {"No, my character does whatever they want with no regard for logic", "Yes, I try to make my character's actions believable for their personality and backstory", "not applicable"},
+        new List <string> {"Yes", "Everyone hates them!", "Everyone loves them!"}, 
+        new List <string> {"0, They're perfect!", "About 2 to 7", "Way too many..."},
+        new List <string> {"Yes", "No"},
     };
 
     private List<string> correctAnswers = new List<string>
@@ -49,7 +58,11 @@
         "A realistic blend of events",
         "The world would still exist without them",
         "Yes, I understand their stance on fairness and morality",
-        "Yes, I try to make my character's actions believable for their personality and backstory"
+        "Yes, I try to make my character's actions believable for their personality and backstory",
+        "Yes",
+        "About 2 to 7",
+        "Yes",
+
     };
 
     private string currentQuestion;
@@ -70,11 +83,12 @@
         else
         {
             if (currentScore >= 3) {
-                Results = "test complete ID 1";
-
-    } else
+                Results = "Your character seems well rounded and complex. Great work.";
+                currentQuestion = "";
+            } else
             {
-                Results = "Test complete ID 2";
+                Results = "I would work on some adjustments to your character, such as making their writing more realistic instead of stereotypical or cartoonish. Keep up the work, though!";
+                currentQuestion = "";
             }
             currentAnswers = new List<string>();
         }
